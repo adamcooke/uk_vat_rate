@@ -1,0 +1,14 @@
+Very basic method for returning the current VAT rate in the UK for 
+a specified date. This only supports recent VAT changes and assumes
+all days prior to 1st January 2008 were at 17.5% and all dates after
+4th January 2011 are at 20%.
+
+Usage
+=====
+
+    Time.now.uk_vat_rate          #=> 17.5
+    Date.today.uk_vat_rate        #=> 17.5
+    UkVatRate.on(Time.now)        #=> 17.5
+    UkVatRate.on(Date.today)      #=> 17.5
+    (Date.today + 4).uk_vat_rate  #=> 20
+
